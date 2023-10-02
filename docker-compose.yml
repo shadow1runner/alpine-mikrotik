@@ -1,0 +1,10 @@
+version: "3"
+services:
+  alpine-mikrotik:
+    build: .
+    container_name: alpine-mikrotik
+    ports:
+      # sshd
+      - 2222:22
+    environment:
+      - SSH_PASSWORD=PasswordArst!
