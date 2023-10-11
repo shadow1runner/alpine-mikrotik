@@ -2,7 +2,7 @@ FROM alpine:3
 
 RUN apk update && apk upgrade && \
     apk add --no-cache python3 py3-pip git \
-    ca-certificates iptables iproute2 bash openssh curl jq
+    ca-certificates iptables iproute2 bash openssh curl jq busybox-extras bind-tools vim
 
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
 RUN ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
