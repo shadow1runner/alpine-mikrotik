@@ -5,7 +5,7 @@ RUN apk update && apk upgrade && \
     ca-certificates iptables iproute2 bash openssh curl jq busybox-extras bind-tools vim
 
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
-RUN ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
+RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519
 COPY sshd_config /etc/ssh/
 
 ADD run_sshd.sh /usr/local/bin
